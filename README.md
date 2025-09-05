@@ -239,4 +239,4 @@ For questions or issues:
 
 **Latest Version**: 1.0.0  
 **Repository**: https://github.com/paymend/paymend-commons  
-**Artifact Registry**: `us-central1-maven.pkg.dev/ujy-nmi-compatible-api/paymend-maven-repo`
+**Artifact Registry**: `us-central1-maven.pkg.dev/ujy-nmi-compatible-api/paymend-maven-repo`# Test SNAPSHOT deployment
