@@ -24,6 +24,7 @@ jobs:
   create-release:
     name: Create and Deploy Release
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     
     steps:
     - name: Checkout code
@@ -173,11 +174,11 @@ jobs:
 
         Co-Authored-By: Claude <noreply@anthropic.com>"
         
-    - name: Create and push tag
+    - name: Create and push tag atomically
       run: |
         git tag -a "v${{ steps.next_version.outputs.version }}" -m "Release v${{ steps.next_version.outputs.version }}"
-        git push origin main
-        git push origin "v${{ steps.next_version.outputs.version }}"
+        # Push both main and tag atomically to prevent race conditions
+        git push origin main "v${{ steps.next_version.outputs.version }}"
         
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
