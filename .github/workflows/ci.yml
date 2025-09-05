@@ -37,13 +37,6 @@ jobs:
       
     - name: Build JAR
       run: mvn clean package -DskipTests
-      
-    - name: Upload JAR artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: paymend-commons-jar
-        path: target/*.jar
-        retention-days: 30
 
   deploy-snapshot:
     name: Deploy SNAPSHOT to Artifact Registry
