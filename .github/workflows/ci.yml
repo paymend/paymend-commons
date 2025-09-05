@@ -2,9 +2,10 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
+    types: [ opened, synchronize, reopened ]
 
 env:
   JAVA_VERSION: '21'
